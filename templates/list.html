@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form role="form" action="/todos/search" method="GET">
+        <div class="lead">Todos検索</div>
+        <div class="form-group">
+        <textarea class="form-control" name="content" id="content" placeholder="Todoを検索" rows="4"></textarea>
+        <br/>
+        <br/>
+        <button class="btn btn-lg btn-primary pull-right" type="submit">検索</button>
+        </div>
+    </form>
+    <br/>
+    <form role="form" action="/todos/save" method="POST">
+        <div class="lead">Todos作成</div>
+        <div class="form-group">
+        <textarea class="form-control" name="content" id="content" placeholder="Todoを追加" rows="4"></textarea>
+        <br/>
+        <br/>
+        <button class="btn btn-lg btn-primary pull-right" type="submit">作成</button>
+        </div>
+    </form>
+
+    <hr />
+    {{ range .todos }}
+        <p><a href="/todos/destroy?id={{ .ID }}">[削除] </a><a href="/todos/edit?id={{.ID}}">{{ .Content }}</a></p>
+    {{end}}
+</body>
+</html>
