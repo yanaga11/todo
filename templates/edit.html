@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Todo更新</title>
 </head>
 <body>
     <h1>
@@ -11,9 +11,9 @@
     </h1>
     <form role="form" action="/todos/update" method="POST">
     <input type="hidden" name="id" value="{{.todo.ID}}" />
-        <div class="lead">Todos更新</div>
+        <div class="lead">Todo更新</div>
         <div class="form-group">
-        <textarea class="form-control" name="content" id="content" placeholder="Todoを追加" rows="4">{{.todo.Content}}</textarea>
+        <textarea class="form-control" name="content" id="content" placeholder="Todoを追加" rows="2">{{.todo.Content}}</textarea>
         <br/>
         <br/>
         <button class="btn btn-lg btn-primary pull-right" type="submit">更新</button>

@@ -19,7 +19,7 @@ func InitDB() (err error) {
 
 type Todo struct {
 	ID      uint   `gorm:"primaryKey"`
-	Content string `gorm:"size:255"`
+	Content string `gorm:"size:255" validate:"required"`
 }
 
 func CreateTodo(content string) (err error) {
